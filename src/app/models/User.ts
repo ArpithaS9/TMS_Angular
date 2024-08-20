@@ -5,11 +5,11 @@ export class User{
     public email:string;
     public roles:string;
 
-    constructor(id:number,fName:string,lName:number,email:string,roles:string)
+    constructor(id:number,firstName:string,lastName:number,email:string,roles:string)
     {
         this.uId=id;
-        this.firstName=fName;
-        this.lastName= lName;
+        this.firstName=firstName;
+        this.lastName= lastName;
         this.email= email;
         this.roles = roles;
 

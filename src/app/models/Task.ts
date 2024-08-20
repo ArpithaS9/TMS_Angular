@@ -4,7 +4,7 @@ export class Task{
     public description:string;
     public status:string;
     public priority:string;
-    public assignedTo:any;
+    public assignedTo:number;
     public createdAt:any;
     public updatedAt:any;
 
