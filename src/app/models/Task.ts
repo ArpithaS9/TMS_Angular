@@ -1,24 +1,10 @@
-export class Task{
-    public uId:number;
-    public title:string;
-    public description:string;
-    public status:string;
-    public priority:string;
-    public assignedTo:number;
-    public createdAt:any;
-    public updatedAt:any;
-
-    constructor(id:number,title:string,desc:string,status:string,priority:string,assignedTo:any,createdAt:any,updatedAt:any)
-    {
-        this.uId=id;
-        this.title=title;
-        this.description= desc;
-        this.status= status;
-        this.priority = priority;
-        this.assignedTo = assignedTo;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt
-
-
-    }
+export interface Task{
+    taskId:number;
+    title:string;
+    description:string;
+    status:string;
+    priority:string;
+    assignedTo:number;
+    createdAt:Date;
+    updatedAt:Date; 
 }
