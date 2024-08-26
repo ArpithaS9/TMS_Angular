@@ -1,0 +1,49 @@
+<p>create-user works!</p>
+<div class="container">
+    <h2 style="text-align: center;">Add New User</h2>
+   <!-- Success Message -->
+  <div *ngIf="successMsg" class="alert alert-success"> {{ successMsg }} </div>
+  <!-- Error Message -->
+  <div *ngIf="errorMsg" class="alert alert-danger"> {{ errorMsg }} </div>  
+  
+<form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+
+ <!-- First Name -->
+<div class="form-group">
+  <label for="firstName">{{label.firstName}} : </label><br/><br/>
+  <input id="firstName" class="form-control" formControlName="firstName" placeholder={{placeHolder.firstName}} /><br/>
+    <div *ngIf="addUserForm.get('firstName')?.invalid && addUserForm.get('firstName')?.touched" class="text-danger">First Name is required.</div>
+</div>
+  
+  
+   <!-- Last Name -->
+<div class="form-group">
+   <label for="lastName">{{label.lastName}} : </label><br/><br/>
+   <input id="lastName" class="form-control" formControlName="lastName" placeholder={{placeHolder.lastName}}/><br/>
+   <div *ngIf="addUserForm.get('lastName')?.invalid && addUserForm.get('lastName')?.touched" class="text-danger">Last Name is required.</div> 
+</div>
+   
+  
+ <!-- Email -->
+   <div class="form-group">
+   <label for="email">{{label.email}} : </label><br/><br/>
+   <input type="email" id="email"  class="form-control" formControlName="email" placeholder={{placeHolder.email}} /><br/>
+   <div *ngIf="addUserForm.get('email')?.invalid && addUserForm.get('email')?.touched" class="text-danger">
+    Valid Email is required. </div>
+   </div>
+  
+    <!-- Role -->
+ <div class="form-group">
+   <label for="roles">{{label.role}} : </label><br/><br/>
+    <select id="roles" formControlName="roles" class="form-control">
+        <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+    </select><br/>
+  <div *ngIf="addUserForm.get('roles')?.invalid && addUserForm.get('roles')?.touched" class="text-danger"> Role is required.</div>
+</div>
+ <br/>
+<div class = "cont"> <button type="submit" class="btn btn-primary"  [disabled]="addUserForm.invalid">Add User</button>
+</div>
+
+ <!-- Submit Button -->
+    </form>
+  </div>
