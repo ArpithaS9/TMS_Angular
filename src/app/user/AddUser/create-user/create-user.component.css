@@ -1,0 +1,12 @@
+.form-group{
+    max-width: 900px;
+	margin: 0 auto;
+	background:rgb(177, 191, 203);
+	padding: 10px;
+	box-shadow: 0 0 10px rgb(199, 213, 224);
+}
+.cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
